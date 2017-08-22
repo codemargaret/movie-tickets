@@ -1,0 +1,11 @@
+#movieTicket {
+  display: none;
+  background-image: url('../ticket.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 400px;
+  text-align: center;
+}
+#movieTicket h1 {
+  margin-top:150px;
+}

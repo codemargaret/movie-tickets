@@ -30,10 +30,6 @@ Ticket.prototype.price = function() {
   } else if (this.type === "old" && this.age < 13 && !this.matinee()) {
     var price = 7;
   }
-
-  else {
-    var price = 1000;
-  }
   return price;
 }
 
@@ -46,7 +42,8 @@ $(document).ready(function() {
 
     var newMovie = new Ticket (parseInt(userAge), parseInt(time), parseInt(userMovie));
 
-    $('#movieTicket').append(newMovie.matinee() + movieType.name[userMovie] + newMovie.price());
+    $('#movieTicket').append('<h2>' + movieType.name[userMovie] + "</h2><p>$" + newMovie.price() + ".00</p>");
+    $('#movieTicket').slideToggle();
   });
 
 });
