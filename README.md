@@ -1,33 +1,32 @@
-# _{Application Name}_
+# _Movie Tickets_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _An app to calculate movie ticket prices, 08.22.2017_
 
-#### By _**Margaret Berry**_
+#### By _**Margaret Berry and Aaron Rohrbacher**_
 
 ## Description
-
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This app returns movie ticket prices based on the user's age, the movie they want to see, and the time they want to go._
 
 ## Setup/Installation Requirements
+_Run the following commands in Terminal:_
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+1. `$ git clone` [this repository](https://github.com/codemargaret/movie-tickets.git)
+2. `$ cd movie-tickets`
+3. `$ open index.html`
 
 ## Known Bugs
-
 _There are no known bugs at this time._
 
-## Support and contact details
+## Project Goals
+_Practice using jQuery and writing and refactoring prototype functions. I've left the refactor branch unmerged because it contains cleaner code, but the code on that branch is not functioning at the moment._
 
-_If you have questions, comments, or concerns, please contact [Margaret](margaretshelaghmcgovern@gmail.com).  Feel free to make a contribution to the code._
+## Future Features
+_Get the refactored code working._
+
+## Support and contact details
+_If you have questions, comments, or concerns, please contact [Margaret](codeberry1@gmail.com).  Feel free to make a contribution to the code._
 
 ## Technologies Used
-
 * _HTML_
 * _CSS_
 * _Bootstrap_
