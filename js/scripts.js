@@ -1,49 +1,44 @@
-var movieType = {name:["Sidekicks","Pulp Fiction","Spiderman","Wonder Woman"], type:["old","old","new","new"]}
-
-Ticket.prototype.matinee = function() {
-  if (this.time < 1500) {
-    var time = true;
-  } else {
-    var time = false;
-  }
-  return time;
+//Objects
+function Movie (id, name, newRelease){
+  this.id = id;
+  this.name = name;
+  this.newRelease = newRelease;
 }
+var movies = [
+  new Movie (0, "Sidekicks", false),
+  new Movie (1, "Pulp Fiction", false),
+  new Movie (2, "Spiderman", true),
+  new Movie (3, "Wonder Woman", false)
+];
 
-function Ticket (age, time, type) {
-  this.age = age;
+function Ticket (movie, time, age){
+  this.movie = movie;
   this.time = time;
-  this.type = movieType.type[type];
-
+  this.age = age;
+  this.basePrice = 15;
 }
 
-Ticket.prototype.price = function() {
-  if (this.type === "new" && this.age > 12 && !this.matinee()) {
-    var price = 15;
-  } else if (this.type === "new" && this.matinee()) {
-    var price = 10;
-  } else if (this.type === "new" && this.age < 13 && !this.matinee()) {
-    var price = 12;
-  } else if (this.type === "old" && this.age > 12 && !this.matinee()) {
-    var price = 10;
-  } else if (this.type === "old" && this.matinee()) {
-    var price = 5;
-  } else if (this.type === "old" && this.age < 13 && !this.matinee()) {
-    var price = 7;
+Ticket.prototype.price = function () {
+  if (this.movie.newRelease === false) {
+     return this.basePrice - 3;
+  } else if (this.time < 15) {
+    return this.basePrice - 5;
+  } else if (this) {
+
   }
-  return price;
-}
+};
 
-$(document).ready(function() {
-  $("#ticket").submit(function(event) {
+//front end
+$(document).ready(function(){
+  $('#ticket').submit(function(){
     event.preventDefault();
-    var userMovie = $("#movieName").val();
+    var movieId = $('#movieName').val();
+    var movieTime = $('#movieTime').val();
     var userAge = $('#userAge').val();
-    var time = $('#movieTime').val();
-
-    var newMovie = new Ticket (parseInt(userAge), parseInt(time), parseInt(userMovie));
-
-    $('#movieTicket').append('<h2>' + movieType.name[userMovie] + "</h2><p>$" + newMovie.price() + ".00</p>");
-    $('#movieTicket').slideToggle();
+    var myMovie = movies[movieId];
+    console.log(myMovie);
+    myTicket = new Ticket (myMovie, movieTime, userAge)
+    console.log(myTicket);
+    console.log(myTicket.price());
   });
-
 });
